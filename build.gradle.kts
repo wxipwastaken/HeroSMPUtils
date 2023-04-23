@@ -42,6 +42,8 @@ tasks {
         relocate("io.papermc.lib", "$relocateLoc.paperlib")
         relocate("me.mattstudios.config", "$relocateLoc.config")
         relocate("revxrsal.commands", "$relocateLoc.commands")
+
+        archiveClassifier.set("")
     }
     build {
         dependsOn(shadowJar)
@@ -49,8 +51,5 @@ tasks {
     compileJava {
         options.encoding = Charsets.UTF_8.name()
         options.release.set(17)
-    }
-    jar {
-        archiveFileName.set("${project.name}-${project.version}.jar")
     }
 }
